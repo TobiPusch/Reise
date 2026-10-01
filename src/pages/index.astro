@@ -4,12 +4,15 @@ import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const entries = (await getCollection('destinations')).sort((a, b) => a.data.title.localeCompare(b.data.title, 'de'));
+const entries = (await getCollection('destinations'))
+  .filter((entry) => !entry.id.startsWith('_'))
+  .map((entry) => ({ ...entry, routeSlug: entry.id.replace(/\.md$/, '') }))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'de'));
 const heroImages = import.meta.glob('../assets/destinations/*/hero.png', { eager: true, import: 'default' }) as Record<string, ImageMetadata>;
 
 const cards = entries.map((entry) => ({
   entry,
-  localHero: heroImages[`../assets/destinations/${entry.slug}/hero.png`]
+  localHero: heroImages[`../assets/destinations/${entry.routeSlug}/hero.png`]
 }));
 ---
 
@@ -29,7 +32,7 @@ const cards = entries.map((entry) => ({
     <section class="destination-grid" id="destinationGrid">
       {cards.map(({ entry, localHero }) => (
         <article class="destination-card" data-status={entry.data.status}>
-          <a href={`/${entry.slug}/`}>
+          <a href={`/${entry.routeSlug}/`}>
             <div class="hero-wrapper">
               {localHero ? (
                 <Image src={localHero} alt={entry.data.heroImage.alt} widths={[480, 720, 960]} sizes="(max-width: 700px) 100vw, 33vw" format="webp" />

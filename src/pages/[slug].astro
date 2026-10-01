@@ -5,18 +5,18 @@ import type { ImageMetadata } from 'astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  const destinations = await getCollection('destinations');
+  const destinations = (await getCollection('destinations')).filter((entry) => !entry.id.startsWith('_'));
 
   return destinations.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry }
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry, slug: entry.id.replace(/\.md$/, '') }
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, slug } = Astro.props;
 const { Content } = await render(entry);
 const heroImages = import.meta.glob('../assets/destinations/*/hero.png', { eager: true, import: 'default' }) as Record<string, ImageMetadata>;
-const localHero = heroImages[`../assets/destinations/${entry.slug}/hero.png`];
+const localHero = heroImages[`../assets/destinations/${slug}/hero.png`];
 const paletteVars = {
   '--city-primary': entry.data.palette.primary,
   '--city-secondary': entry.data.palette.secondary,

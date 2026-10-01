@@ -1,9 +1,10 @@
+import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
 const hexColor = z.string().regex(/^#([A-Fa-f0-9]{6})$/, 'Bitte Hex-Farbwert im Format #RRGGBB angeben.');
 
 const destinations = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/destinations' }),
   schema: z.object({
     title: z.string(),
     country: z.string(),
