@@ -1,6 +1,6 @@
 # Reiseziele
 
-Mein Reise-Journal als statische Website mit [Astro](https://astro.build) (TypeScript strict), veröffentlicht über GitHub Pages unter **https://reisen.open.MEINEDOMAIN.de**.
+Mein Reise-Journal als statische Website mit [Astro](https://astro.build) (TypeScript strict), veröffentlicht über GitHub Pages unter **https://reisen.open.t-pusch.de**.
 
 Die Inhalte stammen aus dem alten Single-File-Reisetagebuch, das unverändert unter [`legacy/reiseziele1.html`](legacy/reiseziele1.html) liegt.
 
@@ -100,10 +100,16 @@ Dann im Frontmatter `src: "../../assets/destinations/lissabon/hero.jpg"` angeben
 
 Jeder Push auf `main` (oder ein manueller Start über „Run workflow“) baut die Seite mit `withastro/action` und veröffentlicht sie mit `actions/deploy-pages` – siehe [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
-Einmalig im Repository einrichten:
+Einmalig einrichten:
 
-1. **Settings → Pages → Build and deployment → Source:** „GitHub Actions“.
-2. **Custom domain:** `reisen.open.MEINEDOMAIN.de` (steht auch in `public/CNAME`).
-3. Beim DNS-Anbieter einen `CNAME`-Eintrag `reisen.open` → `<github-benutzername>.github.io` anlegen und danach „Enforce HTTPS“ aktivieren.
+1. **GitHub → Settings → Pages → Build and deployment → Source:** „GitHub Actions“.
+2. **GitHub → Settings → Pages → Custom domain:** `reisen.open.t-pusch.de` eintragen und speichern. Bei Deployments über GitHub Actions wird `public/CNAME` von GitHub nicht ausgewertet – die Domain muss hier gesetzt sein.
+3. **Cloudflare → DNS → Records** für `t-pusch.de`:
 
-`MEINEDOMAIN` muss in `astro.config.mjs`, `public/CNAME` und hier durch die echte Domain ersetzt werden.
+   | Typ | Name | Ziel | Proxy-Status |
+   |---|---|---|---|
+   | `CNAME` | `reisen.open` | `tobipusch.github.io` | **DNS only** (graue Wolke) |
+
+   „DNS only“ ist nötig: Das kostenlose Cloudflare-Zertifikat deckt nur eine Subdomain-Ebene ab (`*.t-pusch.de`), nicht `reisen.open.t-pusch.de`. Mit orangener Wolke gäbe es einen SSL-Fehler, außerdem könnte GitHub kein eigenes Zertifikat ausstellen.
+4. Warten, bis GitHub unter Settings → Pages „DNS check successful“ meldet und das Zertifikat ausgestellt ist (einige Minuten bis ca. eine Stunde), dann **Enforce HTTPS** aktivieren.
+5. Optional, gegen Domain-Übernahme: **GitHub → Profil-Settings → Pages → Add a domain** `t-pusch.de` verifizieren. GitHub zeigt dafür einen `TXT`-Eintrag an, der in Cloudflare angelegt wird.
