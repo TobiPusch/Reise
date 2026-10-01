@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+
+const destinations = await getCollection("destinations");
+---
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reisetagebuch</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      main {
+        max-width: 70rem;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+      }
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      }
+      article {
+        border-radius: 0.75rem;
+        padding: 1rem;
+      }
+      p {
+        margin: 0.25rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Reisetagebuch</h1>
+      <p>Content Collection für alle Reiseziele.</p>
+      <section class="grid">
+        {
+          destinations.map(({ id, data }) => (
+            <article
+              style={`background:${data.palette.background};color:${data.palette.text};border:2px solid ${data.palette.primary};`}
+            >
+              <h2>{data.city}</h2>
+              <p>{data.country}</p>
+              <p>Route: {data.hashRoute}</p>
+              <p>Kapitel: {data.chapters.length}</p>
+              <p>Datei: {id}</p>
+            </article>
+          ))
+        }
+      </section>
+    </main>
+  </body>
+</html>
