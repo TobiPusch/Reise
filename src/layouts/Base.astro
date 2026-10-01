@@ -1,0 +1,154 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  /** Navigation hell über einem Hero-Bild statt normal oben. */
+  navOverlay?: boolean;
+  /** Zusätzliche Klasse und Custom Properties am <html>-Element (Seitenroot). */
+  rootClass?: string;
+  rootStyle?: Record<string, string>;
+}
+
+const { title, description, navOverlay = false, rootClass, rootStyle = {} } = Astro.props;
+
+const siteTitle = "Reiseziele";
+const fullTitle = title === siteTitle ? siteTitle : `${title} · ${siteTitle}`;
+const style = Object.entries(rootStyle)
+  .map(([key, value]) => `${key}: ${value}`)
+  .join("; ");
+
+const path = Astro.url.pathname;
+const links = [
+  { href: "/", label: "Übersicht" },
+  { href: "/liste/", label: "Meine Liste" },
+];
+---
+
+<!doctype html>
+<html lang="de" class={rootClass} style={style || undefined}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@500;600;700&family=Lora:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <slot name="head" />
+  </head>
+  <body>
+    <nav class:list={["site-nav", { overlay: navOverlay }]} aria-label="Hauptnavigation">
+      {
+        links.map((link) => (
+          <a href={link.href} aria-current={path === link.href ? "page" : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --paper: #efeae0;
+    --ink: #211d18;
+    --card: #e5dfcf;
+    --line: rgba(33, 29, 24, 0.18);
+    --on-dark: #efeae0;
+
+    --status-offen: rgba(33, 29, 24, 0.32);
+    --status-geplant: #2b3a55;
+    --status-gebucht: #a9824f;
+    --status-besucht: #6b7a4f;
+
+    --font-body: "Work Sans", sans-serif;
+    --font-serif: "Cormorant Garamond", serif;
+
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1b1815;
+      --ink: #ece6da;
+      --card: #26221d;
+      --line: rgba(236, 230, 218, 0.18);
+      --status-offen: rgba(236, 230, 218, 0.28);
+      --status-geplant: #3d5178;
+      --status-gebucht: #a9824f;
+      --status-besucht: #6b7a4f;
+    }
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--page-bg, var(--paper));
+    color: var(--page-fg, var(--ink));
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  .site-nav {
+    display: flex;
+    gap: 18px;
+    padding: 16px 22px;
+    font-size: 13px;
+  }
+
+  .site-nav a {
+    color: inherit;
+    opacity: 0.6;
+    text-decoration: none;
+  }
+
+  .site-nav a:hover,
+  .site-nav a[aria-current="page"] {
+    opacity: 1;
+  }
+
+  .site-nav.overlay {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    color: var(--on-dark);
+  }
+
+  .site-nav.overlay a {
+    opacity: 0.75;
+  }
+
+  .site-nav.overlay a:hover {
+    opacity: 1;
+  }
+</style>

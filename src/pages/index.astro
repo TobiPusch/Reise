@@ -1,0 +1,263 @@
+---
+import Base from "../layouts/Base.astro";
+import { getDestinations, profileNumber, withWidth } from "../lib/destinations";
+import { LABELS } from "../scripts/liste-store";
+
+const destinations = await getDestinations();
+const slugs = destinations.map((d) => d.id);
+---
+
+<Base title="Reiseziele" description="Reise-Journal: Orte, auf die du wirklich Bock hast.">
+  <script is:inline slot="head" define:vars={{ slugs }}>
+    // Alte Hash-Links des Single-File-Originals (z.B. /#rom) auf die neuen Seiten umleiten.
+    function redirectLegacyHash() {
+      var hash = decodeURIComponent(location.hash.slice(1));
+      if (!hash) return;
+      if (hash === "liste" || slugs.indexOf(hash) !== -1) {
+        location.replace("/" + hash + "/");
+      } else if (hash === "index") {
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+    }
+    redirectLegacyHash();
+    window.addEventListener("hashchange", redirectLegacyHash);
+  </script>
+
+  <div class="index measure">
+    <header>
+      <p class="kicker">Reise-Journal</p>
+      <h1>Reiseziele</h1>
+      <p class="sub">
+        Orte, auf die du wirklich Bock hast — mit dem, was dich daran konkret reizt. Jedes Profil ist
+        ein eigenes Kapitel.
+      </p>
+      <a class="list-link" href="/liste/">→ Meine Liste — Status &amp; Notizen</a>
+    </header>
+
+    <div class="entries">
+      {
+        destinations.map((entry, i) => (
+          <a class="entry" href={`/${entry.id}/`}>
+            <img
+              src={withWidth(entry.data.heroImage.src, 900)}
+              alt=""
+              loading={i < 2 ? "eager" : "lazy"}
+              decoding="async"
+            />
+            <span class="status-badge" data-dest-id={entry.id} data-status={entry.data.status}>
+              {LABELS[entry.data.status]}
+            </span>
+            <div class="entry-content">
+              <p class="entry-num">{profileNumber(entry, i)}</p>
+              <h2 class="entry-title">{entry.data.title}</h2>
+              <p class="entry-hook">{entry.data.teaser}</p>
+            </div>
+          </a>
+        ))
+      }
+
+      <div class="entry-placeholder">Nächstes Ziel folgt</div>
+    </div>
+
+    <footer>
+      <p>
+        Alle Fotos: Wikimedia Commons, verschiedene CC-Lizenzen (Nachweis jeweils auf der
+        Unterseite).
+      </p>
+    </footer>
+  </div>
+</Base>
+
+<script>
+  import { LABELS, loadState, overrideStatus } from "../scripts/liste-store";
+
+  // Status aus „Meine Liste“ (localStorage) hat Vorrang vor dem Status aus der Content Collection.
+  const state = loadState();
+  document.querySelectorAll<HTMLElement>(".status-badge[data-dest-id]").forEach((badge) => {
+    const id = badge.dataset.destId;
+    if (!id) return;
+    const status = overrideStatus(state, id);
+    if (!status) return;
+    badge.hidden = status === "offen";
+    badge.textContent = LABELS[status];
+    badge.dataset.status = status;
+  });
+</script>
+
+<style>
+  .index {
+    padding: 18px 20px 60px;
+  }
+
+  .measure {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 40px;
+  }
+
+  .kicker {
+    font-size: 13px;
+    opacity: 0.55;
+    margin: 0 0 8px;
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1;
+    margin: 0 0 14px;
+  }
+
+  .sub {
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 46ch;
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  .list-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    padding: 10px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 13.5px;
+    letter-spacing: 0.01em;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .list-link:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .entry {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 200px;
+    overflow: hidden;
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--on-dark);
+    background: #211d18;
+  }
+
+  .entry img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .entry:hover img {
+    transform: scale(1.02);
+  }
+
+  .entry::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20, 18, 15, 0.05) 40%, rgba(20, 18, 15, 0.85) 100%);
+  }
+
+  .entry-content {
+    position: relative;
+    z-index: 1;
+    padding: 18px 20px;
+    width: 100%;
+  }
+
+  .entry-num {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    opacity: 0.75;
+    margin: 0 0 2px;
+  }
+
+  .entry-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0 0 4px;
+  }
+
+  .entry-hook {
+    font-size: 14px;
+    opacity: 0.85;
+    max-width: 38ch;
+    margin: 0;
+  }
+
+  .status-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--on-dark);
+    background: rgba(33, 29, 24, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .status-badge[hidden] {
+    display: none;
+  }
+  .status-badge[data-status="geplant"] {
+    background: var(--status-geplant);
+  }
+  .status-badge[data-status="gebucht"] {
+    background: var(--status-gebucht);
+  }
+  .status-badge[data-status="besucht"] {
+    background: var(--status-besucht);
+  }
+
+  .entry-placeholder {
+    border: 1.5px dashed var(--line);
+    border-radius: 3px;
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+    font-size: 14px;
+  }
+
+  footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    opacity: 0.55;
+    line-height: 1.6;
+  }
+
+  @media (min-width: 680px) {
+    .entry {
+      min-height: 240px;
+    }
+  }
+</style>

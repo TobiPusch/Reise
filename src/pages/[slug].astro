@@ -1,0 +1,385 @@
+---
+import type { GetStaticPaths } from "astro";
+import { render } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { getDestinations, profileNumber, type Destination } from "../lib/destinations";
+import { themeFor, themeVars } from "../lib/themes";
+
+export const getStaticPaths = (async () => {
+  const destinations = await getDestinations();
+  return destinations.map((entry, index) => ({
+    params: { slug: entry.id },
+    props: { entry, number: profileNumber(entry, index) },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  entry: Destination;
+  number: string;
+}
+
+const { entry, number } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const theme = themeFor(entry.id);
+
+const rootStyle = {
+  "--primary": data.palette.primary,
+  "--secondary": data.palette.secondary,
+  "--accent": data.palette.accent,
+  "--background": data.palette.background,
+  "--text": data.palette.text,
+  ...themeVars(theme),
+};
+
+const footerText =
+  data.photoCredits ?? (data.heroImage.credit ? `Titelbild: ${data.heroImage.credit}` : undefined);
+---
+
+<Base
+  title={data.title}
+  description={data.subtitle ?? data.teaser}
+  navOverlay={theme.navOverlay}
+  rootClass="city"
+  rootStyle={rootStyle}
+>
+  <article>
+    <header class="hero">
+      <img src={data.heroImage.src} alt={data.heroImage.alt} fetchpriority="high" />
+      <div class="hero-content">
+        <div class="measure">
+          <p class="kicker">Städteprofil · {number}</p>
+          <h1 class="title">{data.title}</h1>
+          {data.subtitle && <p class="hero-sub">{data.subtitle}</p>}
+        </div>
+      </div>
+    </header>
+
+    <div class="measure">
+      <div class="prose">
+        <Content />
+      </div>
+
+      {
+        data.attractions.length > 0 && (
+          <section class="attractions" aria-labelledby="attractions-title">
+            <h2 id="attractions-title" class="attractions-title">
+              Sehenswürdigkeiten
+            </h2>
+            <ul class="attractions-grid">
+              {data.attractions.map((a) => (
+                <li class="attraction">
+                  {a.image && (
+                    <img src={a.image.src} alt={a.image.alt} loading="lazy" decoding="async" />
+                  )}
+                  <div class="attraction-body">
+                    <p class="attraction-category">{a.category}</p>
+                    <h3 class="attraction-name">{a.name}</h3>
+                    <p class="attraction-text">{a.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        footerText && (
+          <footer class="city-footer">
+            <p>{footerText}</p>
+          </footer>
+        )
+      }
+    </div>
+  </article>
+</Base>
+
+<style is:global>
+  /* Light: Palette direkt; Dark: Hintergrund/Text getauscht, Akzente angepasst. */
+  html.city {
+    --page-bg: var(--background);
+    --page-fg: var(--text);
+    --on-dark: var(--background);
+    --surface: var(--surface-light, color-mix(in srgb, var(--primary) 8%, var(--background)));
+    --rule: color-mix(in srgb, var(--text) var(--rule-alpha), transparent);
+    --chapter-num: var(--primary);
+    --quote-color: var(--secondary);
+    --quote-line: var(--quote-border);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html.city {
+      --page-bg: color-mix(in srgb, var(--text) 92%, black);
+      --page-fg: var(--background);
+      --surface: color-mix(in srgb, var(--background) 9%, var(--text));
+      --rule: color-mix(in srgb, var(--background) 16%, transparent);
+      --chapter-num: color-mix(in srgb, var(--primary) 75%, var(--background));
+      --quote-color: color-mix(in srgb, var(--secondary) 40%, var(--background));
+      --quote-line: color-mix(in srgb, var(--quote-border) 80%, var(--background));
+    }
+  }
+
+  .city .measure {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  /* --- Hero --- */
+  .city .hero {
+    position: relative;
+    min-height: var(--hero-min);
+    display: flex;
+    align-items: flex-end;
+    background: var(--hero-bg);
+    overflow: hidden;
+  }
+
+  .city .hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: var(--hero-opacity);
+    filter: var(--hero-filter);
+  }
+
+  .city .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--hero-bg) 0%, transparent) 30%,
+      color-mix(in srgb, var(--hero-shade) var(--hero-shade-alpha), transparent) 100%
+    );
+  }
+
+  .city .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 28px 0 34px;
+    color: var(--background);
+  }
+
+  .city .kicker {
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    opacity: 0.75;
+    margin: 0 0 6px;
+  }
+
+  .city h1.title {
+    font-family: var(--font-display);
+    font-weight: var(--title-weight);
+    font-size: var(--title-size);
+    line-height: var(--title-leading);
+    letter-spacing: var(--title-tracking);
+    margin: 0 0 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .city .hero-sub {
+    font-size: 15.5px;
+    max-width: 40ch;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  /* --- Text aus Markdown --- */
+  .city .prose {
+    counter-reset: chapter;
+    padding-top: 40px;
+  }
+
+  .city .prose p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* Intro: alles vor dem ersten Kapitel */
+  .city .prose > p:not(h2 ~ p) {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .city .prose > p.lead {
+    font-family: var(--font-display);
+    font-style: var(--lead-style);
+    font-size: var(--lead-size);
+    font-weight: var(--lead-weight);
+    line-height: var(--lead-leading);
+    margin-top: 0;
+  }
+
+  /* Kapitel: ## Überschrift mit Nummer und Trennlinie wie im Original */
+  .city .prose h2 {
+    counter-increment: chapter;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 24px 0 16px;
+    padding-top: 54px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--font-display);
+    font-weight: var(--chapter-title-weight);
+    font-size: var(--chapter-title-size);
+    line-height: 1.2;
+  }
+
+  .city .prose h2::before {
+    content: counter(chapter, decimal-leading-zero);
+    flex: none;
+    font-size: var(--chapter-num-size);
+    font-weight: 400;
+    font-style: normal;
+    color: var(--chapter-num);
+  }
+
+  .city figure {
+    margin: 22px 0;
+  }
+
+  .city figure img {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+  }
+
+  .city figcaption {
+    font-size: 12.5px;
+    opacity: 0.55;
+    margin-top: 7px;
+    line-height: 1.5;
+  }
+
+  .city figcaption .credit {
+    display: block;
+    font-size: 11px;
+    margin-top: 2px;
+  }
+
+  .city blockquote {
+    margin: 26px 0;
+    padding: 4px 0 4px 18px;
+    border-left: 3px solid var(--quote-line);
+    font-family: var(--font-display);
+    font-style: var(--quote-style);
+    font-weight: var(--quote-weight);
+    font-size: var(--quote-size);
+    line-height: 1.5;
+    color: var(--quote-color);
+  }
+
+  .city blockquote p {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+
+  .city .note {
+    background: var(--surface);
+    border-radius: 3px;
+    padding: 16px 18px;
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin: 22px 0;
+  }
+
+  .city .note strong {
+    color: var(--chapter-num);
+  }
+
+  /* --- Sehenswürdigkeiten --- */
+  .city .attractions {
+    margin-top: 32px;
+    padding-top: 54px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .city .attractions-title {
+    font-family: var(--font-display);
+    font-weight: var(--chapter-title-weight);
+    font-size: var(--chapter-title-size);
+    margin: 0 0 20px;
+  }
+
+  .city .attractions-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .city .attraction {
+    background: var(--surface);
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .city .attraction img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .city .attraction-body {
+    padding: 14px 16px 16px;
+  }
+
+  .city .attraction-category {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--chapter-num);
+    margin: 0 0 4px;
+  }
+
+  .city .attraction-name {
+    font-family: var(--font-display);
+    font-weight: var(--chapter-title-weight);
+    font-size: 21px;
+    line-height: 1.2;
+    margin: 0 0 6px;
+  }
+
+  .city .attraction-text {
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+    opacity: 0.85;
+  }
+
+  /* --- Footer --- */
+  .city .city-footer {
+    margin-top: 60px;
+    padding: 28px 0 40px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    opacity: 0.5;
+    line-height: 1.7;
+  }
+
+  @media (min-width: 560px) {
+    .city .attractions-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 680px) {
+    .city h1.title {
+      font-size: var(--title-size-lg);
+    }
+    .city .hero {
+      min-height: var(--hero-min-lg);
+    }
+  }
+</style>
