@@ -8,6 +8,7 @@ country: "Land"
 continent: "Europa"       # Europa | Asien | Afrika | Nordamerika | Südamerika | Ozeanien | Antarktis
 teaser: "Ein Satz für die Karte auf der Übersicht."
 status: "geplant"          # "geplant" | "besucht"
+budget: 3                  # optional: 1 (günstig) bis 5 (teuer)
 # visitedAt: 2026-05-14    # optional, nur bei status "besucht"
 order: 7                   # optional: Position auf der Übersicht
 subtitle: "Untertitel im Hero der Detailseite."   # optional

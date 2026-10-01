@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import { getDestinations, profileNumber, type Destination } from "../lib/destinations";
+import BudgetRating from "../components/BudgetRating.astro";
 import { STATUS_LABELS } from "../lib/taxonomy";
 import { themeFor, themeVars } from "../lib/themes";
 
@@ -68,6 +69,16 @@ const footerText =
           <dt>Status</dt>
           <dd>{STATUS_LABELS[data.status]}{data.visitedAt && ` · ${dateFormat.format(data.visitedAt)}`}</dd>
         </div>
+        {
+          data.budget !== undefined && (
+            <div>
+              <dt>Budget</dt>
+              <dd>
+                <BudgetRating value={data.budget} />
+              </dd>
+            </div>
+          )
+        }
         {
           data.bestTime && (
             <div>

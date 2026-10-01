@@ -23,6 +23,7 @@ src/
 ├── content/destinations/
 │   ├── _template.md             # Vorlage (wird wegen „_“ nicht gebaut)
 │   └── <slug>.md                # ein Reiseziel pro Datei → /<slug>/
+├── components/BudgetRating.astro # 💰-Skala für das Budget
 ├── layouts/Base.astro           # Grundgerüst, Zurück-Link, globale Farben, Dark Mode
 ├── lib/
 │   ├── destinations.ts          # Ziele laden und sortieren
@@ -35,14 +36,14 @@ src/
 
 ## Filter auf der Übersicht
 
-Die Übersicht lässt sich nach **Kontinent** und **Status** filtern. Angeboten wird ein Filter nur, wenn es dafür mindestens zwei verschiedene Werte gibt – solange z.B. alle Ziele „geplant“ sind, erscheint der Status-Filter nicht. Die Auswahl steht in der URL (`/?kontinent=europa&status=besucht`) und lässt sich so teilen.
+Die Übersicht lässt sich nach **Kontinent**, **Status** und **Budget** filtern. Angeboten wird ein Filter nur, wenn es dafür mindestens zwei verschiedene Werte gibt – solange z.B. alle Ziele „geplant“ sind, erscheint der Status-Filter nicht. Der Budget-Filter erscheint, sobald mindestens ein Ziel ein `budget` hat, und bietet zusätzlich „Ohne Angabe“ an. Die Auswahl steht in der URL (`/?kontinent=europa&budget=4`) und lässt sich so teilen.
 
 ## Neues Ziel hinzufügen
 
 1. `src/content/destinations/_template.md` kopieren und als `<slug>.md` speichern, z.B. `lissabon.md`. Der Dateiname wird zur URL (`/lissabon/`). Dateien mit führendem `_` werden ignoriert.
 2. Frontmatter ausfüllen:
    - **Pflicht:** `title`, `country`, `continent` (`Europa` | `Asien` | `Afrika` | `Nordamerika` | `Südamerika` | `Ozeanien` | `Antarktis`), `teaser`, `palette` (fünf Hex-Farben), `heroImage` (`src`, `alt`, optional `credit`)
-   - **Optional:** `status` (`"geplant"` | `"besucht"`, Standard `"geplant"`), `visitedAt` (Datum), `attractions`, `order` (Position auf der Übersicht), `subtitle` (Hero-Untertitel), `bestTime` (beste Reisezeit), `photoCredits` (Bildnachweis im Footer)
+   - **Optional:** `status` (`"geplant"` | `"besucht"`, Standard `"geplant"`), `visitedAt` (Datum), `budget` (1 = günstig bis 5 = teuer, wird als 💰-Skala angezeigt und ist filterbar), `attractions`, `order` (Position auf der Übersicht), `subtitle` (Hero-Untertitel), `bestTime` (beste Reisezeit), `photoCredits` (Bildnachweis im Footer)
 3. Text als Markdown schreiben: Einleitung oben, jedes Kapitel als `## Überschrift`. Kapitel werden automatisch nummeriert. Bilder, Zitate (`>`) und Notizen (`<div class="note">`) wie in der Vorlage.
 4. `npm run dev` – das Ziel erscheint automatisch auf der Übersicht (inkl. Filter) und als Detailseite.
 

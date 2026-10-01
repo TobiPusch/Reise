@@ -1,0 +1,30 @@
+---
+import { BUDGET_ICON, BUDGET_MAX, budgetLabel } from "../lib/taxonomy";
+
+interface Props {
+  /** Wert von 1 bis 5. */
+  value: number;
+  class?: string;
+}
+
+const { value, class: className } = Astro.props;
+const icons = Array.from({ length: BUDGET_MAX }, (_, i) => i < value);
+---
+
+<span class:list={["budget", className]} role="img" aria-label={budgetLabel(value)} title={budgetLabel(value)}>
+  {icons.map((filled) => <span class:list={["budget-icon", { off: !filled }]} aria-hidden="true">{BUDGET_ICON}</span>)}
+</span>
+
+<style>
+  .budget {
+    display: inline-flex;
+    gap: 1px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .budget-icon.off {
+    opacity: 0.25;
+    filter: grayscale(1);
+  }
+</style>

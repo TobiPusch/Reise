@@ -4,6 +4,7 @@ country: "Japan"
 continent: "Asien"
 teaser: "Die andere Kultur, anderes Essen, Anime real erlebbar, Nahverkehr wie ein eigenes System."
 status: "geplant"
+budget: 4                  # 1 (günstig) bis 5 (teuer)
 order: 1
 subtitle: "Eine Stadt, die dich nicht wegen ihrer Sehenswürdigkeiten reizt, sondern weil hier einfach alles anders tickt."
 bestTime: "März–Mai oder Okt–Nov (Kirschblüte / Herbstlaub)"

@@ -1,27 +1,76 @@
 ---
 import Base from "../layouts/Base.astro";
 import { getDestinations, profileNumber, withWidth } from "../lib/destinations";
-import { CONTINENTS, STATUSES, STATUS_LABELS, filterKey } from "../lib/taxonomy";
+import BudgetRating from "../components/BudgetRating.astro";
+import {
+  BUDGET_LEVELS,
+  BUDGET_NONE,
+  CONTINENTS,
+  STATUSES,
+  STATUS_LABELS,
+  budgetLabel,
+  filterKey,
+} from "../lib/taxonomy";
 
 const destinations = await getDestinations();
 const slugs = destinations.map((d) => d.id);
 
 // Filter nur für Werte anbieten, die tatsächlich vorkommen.
 const count = (pred: (d: (typeof destinations)[number]) => boolean) => destinations.filter(pred).length;
-const filterGroups = [
-  {
-    key: "kontinent",
-    label: "Kontinent",
-    options: CONTINENTS.map((c) => ({ value: filterKey(c), label: c, n: count((d) => d.data.continent === c) })),
-  },
-  {
-    key: "status",
-    label: "Status",
-    options: STATUSES.map((st) => ({ value: st, label: STATUS_LABELS[st], n: count((d) => d.data.status === st) })),
-  },
-]
+interface FilterOption {
+  value: string;
+  label: string;
+  ariaLabel?: string;
+  /** Budget-Stufe, wird als 💰-Skala dargestellt. */
+  level?: number;
+  n: number;
+}
+
+interface FilterGroup {
+  key: string;
+  label: string;
+  options: FilterOption[];
+  /** Ab wie vielen vorhandenen Werten der Filter angezeigt wird. */
+  minOptions: number;
+}
+
+const budgetKey = (d: (typeof destinations)[number]) =>
+  d.data.budget === undefined ? BUDGET_NONE : String(d.data.budget);
+
+const filterGroups = (
+  [
+    {
+      key: "kontinent",
+      label: "Kontinent",
+      minOptions: 2,
+      options: CONTINENTS.map((c) => ({ value: filterKey(c), label: c, n: count((d) => d.data.continent === c) })),
+    },
+    {
+      key: "status",
+      label: "Status",
+      minOptions: 2,
+      options: STATUSES.map((st) => ({ value: st, label: STATUS_LABELS[st], n: count((d) => d.data.status === st) })),
+    },
+    {
+      key: "budget",
+      label: "Budget",
+      // Sobald ein Ziel ein Budget hat, ist der Filter sinnvoll.
+      minOptions: 1,
+      options: [
+        ...BUDGET_LEVELS.map((level) => ({
+          value: String(level),
+          label: budgetLabel(level),
+          level,
+          ariaLabel: budgetLabel(level),
+          n: count((d) => d.data.budget === level),
+        })),
+        { value: BUDGET_NONE, label: "Ohne Angabe", n: count((d) => d.data.budget === undefined) },
+      ],
+    },
+  ] satisfies FilterGroup[]
+)
   .map((g) => ({ ...g, options: g.options.filter((o) => o.n > 0) }))
-  .filter((g) => g.options.length > 1);
+  .filter((g) => g.options.filter((o) => o.value !== BUDGET_NONE).length >= g.minOptions && g.options.length > 1);
 ---
 
 <Base title="Reiseziele" description="Reise-Journal: Orte, auf die du wirklich Bock hast.">
@@ -60,8 +109,15 @@ const filterGroups = [
                 Alle
               </button>
               {group.options.map((o) => (
-                <button type="button" class="chip" data-value={o.value} aria-pressed="false">
-                  {o.label} <span class="chip-count">{o.n}</span>
+                <button
+                  type="button"
+                  class="chip"
+                  data-value={o.value}
+                  aria-pressed="false"
+                  aria-label={"ariaLabel" in o ? `${o.ariaLabel} (${o.n})` : undefined}
+                >
+                  {"level" in o ? <BudgetRating value={o.level} /> : o.label}{" "}
+                  <span class="chip-count">{o.n}</span>
                 </button>
               ))}
             </div>
@@ -79,6 +135,7 @@ const filterGroups = [
             href={`/${entry.id}/`}
             data-kontinent={filterKey(entry.data.continent)}
             data-status={entry.data.status}
+            data-budget={budgetKey(entry)}
           >
             <img
               src={withWidth(entry.data.heroImage.src, 900)}
@@ -95,6 +152,9 @@ const filterGroups = [
               </p>
               <h2 class="entry-title">{entry.data.title}</h2>
               <p class="entry-hook">{entry.data.teaser}</p>
+              {entry.data.budget !== undefined && (
+                <BudgetRating value={entry.data.budget} class="entry-budget" />
+              )}
             </div>
           </a>
         ))
@@ -361,6 +421,11 @@ const filterGroups = [
     font-weight: 600;
     font-size: 32px;
     margin: 0 0 4px;
+  }
+
+  .entry-content :global(.entry-budget) {
+    margin-top: 8px;
+    font-size: 14px;
   }
 
   .entry-hook {

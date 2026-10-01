@@ -24,6 +24,8 @@ const destinations = defineCollection({
     teaser: z.string(),
     status: z.enum(["besucht", "geplant"]).default("geplant"),
     visitedAt: z.coerce.date().optional(),
+    /** Budget-Einschätzung von 1 (günstig) bis 5 (teuer). */
+    budget: z.number().int().min(1).max(5).optional(),
     /**
      * Farben aus dem CSS der Original-Stadtseite.
      * primary   → Kapitelnummern, Hervorhebung in Notizen
