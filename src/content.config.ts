@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import { CONTINENTS } from "./lib/taxonomy";
 
 const hexColor = z
   .string()
@@ -18,6 +19,7 @@ const destinations = defineCollection({
   schema: z.object({
     title: z.string(),
     country: z.string(),
+    continent: z.enum(CONTINENTS),
     /** Kurztext aus dem Eintrag auf der Übersichtsseite. */
     teaser: z.string(),
     status: z.enum(["besucht", "geplant"]).default("geplant"),
@@ -53,7 +55,7 @@ const destinations = defineCollection({
     order: z.number().int().optional(),
     /** Untertitel im Hero der Stadtseite. */
     subtitle: z.string().optional(),
-    /** Vorbelegung „Beste Reisezeit“ auf der Seite „Meine Liste“. */
+    /** Beste Reisezeit, angezeigt auf der Detailseite. */
     bestTime: z.string().optional(),
     /** Sammel-Bildnachweis aus dem Footer der Stadtseite. */
     photoCredits: z.string().optional(),

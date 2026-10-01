@@ -2,7 +2,7 @@
 interface Props {
   title: string;
   description?: string;
-  /** Navigation hell über einem Hero-Bild statt normal oben. */
+  /** Zurück-Link hell über einem Hero-Bild statt normal oben. */
   navOverlay?: boolean;
   /** Zusätzliche Klasse und Custom Properties am <html>-Element (Seitenroot). */
   rootClass?: string;
@@ -18,10 +18,7 @@ const style = Object.entries(rootStyle)
   .join("; ");
 
 const path = Astro.url.pathname;
-const links = [
-  { href: "/", label: "Übersicht" },
-  { href: "/liste/", label: "Meine Liste" },
-];
+const isHome = path === "/";
 ---
 
 <!doctype html>
@@ -42,15 +39,13 @@ const links = [
     <slot name="head" />
   </head>
   <body>
-    <nav class:list={["site-nav", { overlay: navOverlay }]} aria-label="Hauptnavigation">
-      {
-        links.map((link) => (
-          <a href={link.href} aria-current={path === link.href ? "page" : undefined}>
-            {link.label}
-          </a>
-        ))
-      }
-    </nav>
+    {
+      !isHome && (
+        <nav class:list={["site-nav", { overlay: navOverlay }]} aria-label="Navigation">
+          <a href="/">← Alle Reiseziele</a>
+        </nav>
+      )
+    }
     <main>
       <slot />
     </main>
@@ -65,9 +60,7 @@ const links = [
     --line: rgba(33, 29, 24, 0.18);
     --on-dark: #efeae0;
 
-    --status-offen: rgba(33, 29, 24, 0.32);
     --status-geplant: #2b3a55;
-    --status-gebucht: #a9824f;
     --status-besucht: #6b7a4f;
 
     --font-body: "Work Sans", sans-serif;
@@ -82,9 +75,7 @@ const links = [
       --ink: #ece6da;
       --card: #26221d;
       --line: rgba(236, 230, 218, 0.18);
-      --status-offen: rgba(236, 230, 218, 0.28);
       --status-geplant: #3d5178;
-      --status-gebucht: #a9824f;
       --status-besucht: #6b7a4f;
     }
   }
@@ -131,8 +122,7 @@ const links = [
     text-decoration: none;
   }
 
-  .site-nav a:hover,
-  .site-nav a[aria-current="page"] {
+  .site-nav a:hover {
     opacity: 1;
   }
 

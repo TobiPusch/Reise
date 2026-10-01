@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { render } from "astro:content";
 import Base from "../layouts/Base.astro";
 import { getDestinations, profileNumber, type Destination } from "../lib/destinations";
+import { STATUS_LABELS } from "../lib/taxonomy";
 import { themeFor, themeVars } from "../lib/themes";
 
 export const getStaticPaths = (async () => {
@@ -32,6 +33,8 @@ const rootStyle = {
   ...themeVars(theme),
 };
 
+const dateFormat = new Intl.DateTimeFormat("de-DE", { month: "long", year: "numeric" });
+
 const footerText =
   data.photoCredits ?? (data.heroImage.credit ? `Titelbild: ${data.heroImage.credit}` : undefined);
 ---
@@ -56,6 +59,25 @@ const footerText =
     </header>
 
     <div class="measure">
+      <dl class="facts">
+        <div>
+          <dt>Land</dt>
+          <dd>{data.country} · {data.continent}</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>{STATUS_LABELS[data.status]}{data.visitedAt && ` · ${dateFormat.format(data.visitedAt)}`}</dd>
+        </div>
+        {
+          data.bestTime && (
+            <div>
+              <dt>Beste Reisezeit</dt>
+              <dd>{data.bestTime}</dd>
+            </div>
+          )
+        }
+      </dl>
+
       <div class="prose">
         <Content />
       </div>
@@ -189,10 +211,33 @@ const footerText =
     margin: 0;
   }
 
+  /* --- Eckdaten --- */
+  .city .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin: 0;
+    padding: 22px 0 18px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13.5px;
+  }
+
+  .city .facts dt {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.5;
+    margin-bottom: 2px;
+  }
+
+  .city .facts dd {
+    margin: 0;
+  }
+
   /* --- Text aus Markdown --- */
   .city .prose {
     counter-reset: chapter;
-    padding-top: 40px;
+    padding-top: 32px;
   }
 
   .city .prose p {

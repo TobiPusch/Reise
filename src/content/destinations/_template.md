@@ -2,15 +2,16 @@
 # Vorlage für ein neues Reiseziel.
 # 1. Datei kopieren und als <slug>.md speichern (z.B. lissabon.md) – ohne führenden Unterstrich.
 #    Der Dateiname wird zur URL: /lissabon/
-# 2. Felder ausfüllen. Pflichtfelder: title, country, teaser, palette, heroImage.
+# 2. Felder ausfüllen. Pflichtfelder: title, country, continent, teaser, palette, heroImage.
 title: "Stadtname"
 country: "Land"
+continent: "Europa"       # Europa | Asien | Afrika | Nordamerika | Südamerika | Ozeanien | Antarktis
 teaser: "Ein Satz für die Karte auf der Übersicht."
 status: "geplant"          # "geplant" | "besucht"
 # visitedAt: 2026-05-14    # optional, nur bei status "besucht"
 order: 7                   # optional: Position auf der Übersicht
 subtitle: "Untertitel im Hero der Detailseite."   # optional
-bestTime: "z.B. Mai–September"                    # optional: Vorbelegung auf „Meine Liste“
+bestTime: "z.B. Mai–September"                    # optional: beste Reisezeit
 photoCredits: "Bildnachweis: …"                   # optional: Footer der Detailseite
 palette:
   primary: "#B24A30"       # Kapitelnummern, Hervorhebungen

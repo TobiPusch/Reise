@@ -1,6 +1,7 @@
 ---
 title: "Kopenhagen"
 country: "Dänemark"
+continent: "Europa"
 teaser: "Hygge im Alltag — Gemütlichkeit, Fahrradkultur, Feierabend am Wasser."
 status: "geplant"
 order: 6

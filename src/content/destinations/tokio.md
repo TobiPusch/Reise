@@ -1,6 +1,7 @@
 ---
 title: "Tokio"
 country: "Japan"
+continent: "Asien"
 teaser: "Die andere Kultur, anderes Essen, Anime real erlebbar, Nahverkehr wie ein eigenes System."
 status: "geplant"
 order: 1

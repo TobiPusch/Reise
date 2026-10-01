@@ -1,6 +1,7 @@
 ---
 title: "Rom"
 country: "Italien"
+continent: "Europa"
 teaser: "Der Klassiker — Antike, Kunst & Vatikan, Straßenleben, alles auf einem Haufen."
 status: "geplant"
 order: 2

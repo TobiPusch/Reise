@@ -1,6 +1,7 @@
 ---
 title: "Griechenland"
 country: "Griechenland"
+continent: "Europa"
 teaser: "Athen & antike Stätten — Geschichte, die du aus dem Unterricht und aus Assassin's Creed kennst."
 status: "geplant"
 order: 3

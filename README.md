@@ -23,25 +23,28 @@ src/
 ├── content/destinations/
 │   ├── _template.md             # Vorlage (wird wegen „_“ nicht gebaut)
 │   └── <slug>.md                # ein Reiseziel pro Datei → /<slug>/
-├── layouts/Base.astro           # Grundgerüst, Navigation, globale Farben, Dark Mode
+├── layouts/Base.astro           # Grundgerüst, Zurück-Link, globale Farben, Dark Mode
 ├── lib/
 │   ├── destinations.ts          # Ziele laden und sortieren
+│   ├── taxonomy.ts              # Kontinente und Status (für Schema und Filter)
 │   └── themes.ts                # Schriften & Hero-Details je Stadt (aus dem Original-CSS)
-├── pages/
-│   ├── index.astro              # Übersicht (leitet alte Links wie /#rom auf /rom/ um)
-│   ├── [slug].astro             # Detailseite je Ziel
-│   └── liste.astro              # „Meine Liste“
-└── scripts/liste-store.ts       # localStorage-Logik (Key: reiseziele_liste_v1)
+└── pages/
+    ├── index.astro              # Übersicht mit Filtern (leitet alte Links wie /#rom auf /rom/ um)
+    └── [slug].astro             # Detailseite je Ziel
 ```
+
+## Filter auf der Übersicht
+
+Die Übersicht lässt sich nach **Kontinent** und **Status** filtern. Angeboten wird ein Filter nur, wenn es dafür mindestens zwei verschiedene Werte gibt – solange z.B. alle Ziele „geplant“ sind, erscheint der Status-Filter nicht. Die Auswahl steht in der URL (`/?kontinent=europa&status=besucht`) und lässt sich so teilen.
 
 ## Neues Ziel hinzufügen
 
 1. `src/content/destinations/_template.md` kopieren und als `<slug>.md` speichern, z.B. `lissabon.md`. Der Dateiname wird zur URL (`/lissabon/`). Dateien mit führendem `_` werden ignoriert.
 2. Frontmatter ausfüllen:
-   - **Pflicht:** `title`, `country`, `teaser`, `palette` (fünf Hex-Farben), `heroImage` (`src`, `alt`, optional `credit`)
-   - **Optional:** `status` (`"geplant"` | `"besucht"`, Standard `"geplant"`), `visitedAt` (Datum), `attractions`, `order` (Position auf der Übersicht), `subtitle` (Hero-Untertitel), `bestTime` (Vorbelegung auf „Meine Liste“), `photoCredits` (Bildnachweis im Footer)
+   - **Pflicht:** `title`, `country`, `continent` (`Europa` | `Asien` | `Afrika` | `Nordamerika` | `Südamerika` | `Ozeanien` | `Antarktis`), `teaser`, `palette` (fünf Hex-Farben), `heroImage` (`src`, `alt`, optional `credit`)
+   - **Optional:** `status` (`"geplant"` | `"besucht"`, Standard `"geplant"`), `visitedAt` (Datum), `attractions`, `order` (Position auf der Übersicht), `subtitle` (Hero-Untertitel), `bestTime` (beste Reisezeit), `photoCredits` (Bildnachweis im Footer)
 3. Text als Markdown schreiben: Einleitung oben, jedes Kapitel als `## Überschrift`. Kapitel werden automatisch nummeriert. Bilder, Zitate (`>`) und Notizen (`<div class="note">`) wie in der Vorlage.
-4. `npm run dev` – das Ziel erscheint automatisch auf der Übersicht, als Detailseite und auf „Meine Liste“.
+4. `npm run dev` – das Ziel erscheint automatisch auf der Übersicht (inkl. Filter) und als Detailseite.
 
 Ohne Eintrag in `src/lib/themes.ts` bekommt ein neues Ziel das Standard-Design (Cormorant Garamond). Wer Schrift oder Hero-Details anpassen will, ergänzt dort einen Eintrag mit dem Slug.
 
@@ -92,10 +95,6 @@ schema: ({ image }) =>
 ```
 
 Dann im Frontmatter `src: "../../assets/destinations/lissabon/hero.jpg"` angeben und in `index.astro` / `[slug].astro` für lokale Bilder `<Image>` statt `<img>` verwenden.
-
-## Meine Liste
-
-Status, Budget und beste Reisezeit werden – wie im Original – im `localStorage` des Browsers unter `reiseziele_liste_v1` gespeichert. Die Daten bleiben also nur im jeweiligen Browser und für die jeweilige Domain erhalten.
 
 ## Deployment
 

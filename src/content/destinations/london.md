@@ -1,6 +1,7 @@
 ---
 title: "London"
 country: "Vereinigtes Königreich"
+continent: "Europa"
 teaser: "Die Stadt & ihre Sehenswürdigkeiten — Big Ben, Buckingham Palace, Tower Bridge."
 status: "geplant"
 order: 4

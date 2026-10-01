@@ -1,6 +1,7 @@
 ---
 title: "Berlin"
 country: "Deutschland"
+continent: "Europa"
 teaser: "Deutsche Geschichte im Stadtplan — Mauer, Checkpoint Charlie, geteilte und wiedervereinte Stadt."
 status: "geplant"
 order: 5
