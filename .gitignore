@@ -1,0 +1,14 @@
+# Abhängigkeiten
+node_modules/
+
+# Build-Ausgabe
+dist/
+
+# Astro-generierte Typen
+.astro/
+
+# Logs & Umgebung
+npm-debug.log*
+.env
+.env.*
+.DS_Store
