@@ -4,10 +4,10 @@ country: "Österreich"
 continent: "Europa"
 teaser: "Kaiserstadt zwischen Schlössern, Kaffeehäusern und Schnitzel — mit einem japanischen Garten als Brücke nach Tokio."
 status: "geplant"
-budget: 2                  # 1 (günstig) bis 5 (teuer)
+budget: 3                  # 1 (günstig) bis 5 (teuer)
 order: 7
 subtitle: "Habsburger Prunk, Kaffeehaus-Gemütlichkeit und eine Küche, für die allein sich die Reise lohnt."
-photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Römische Ausgrabungen am Michaelerplatz (Jeff Keyzer), Haus der Musik, Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
+photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Römische Ausgrabungen am Michaelerplatz (Jeff Keyzer), Haus der Musik, Donauturm (Diego Delso), Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
 palette:
   primary: "#A3262A"    # Wiener Rot
   secondary: "#2F4A3A"  # Habsburger Grün
@@ -146,6 +146,17 @@ Von Barock-Schlössern über die Gotik des Stephansdoms bis zu Hundertwassers bu
   <div class="item-body">
     <h3>Hundertwasserhaus</h3>
     <p>Bunte Fassaden, schiefe Böden, Bäume auf den Terrassen und kaum eine gerade Linie: Friedensreich Hundertwasser entwarf diesen Gemeindebau in den 1980ern als Gegenentwurf zur strengen Architektur. Weil hier Menschen wohnen, bleibt es beim Blick von außen, das Hundertwasser Village gegenüber lädt aber zum Stöbern ein.</p>
+  </div>
+</article>
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torre_del_Danubio,_Viena,_Austria,_2020-02-01,_DD_108-110_HDR.jpg?width=1200" alt="Der Donauturm im Wiener Donaupark" loading="lazy">
+    <figcaption>Der Donauturm im Donaupark <span class="credit">Quelle: Diego Delso, Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Donauturm</h3>
+    <p>Mit rund 252 Metern ist der Donauturm von 1964 das höchste Bauwerk Österreichs, ein Lift bringt einen in Sekunden auf die Aussichtsplattform. Von dort und aus dem Drehrestaurant überblickt man die ganze Stadt bis zum Wienerwald.</p>
   </div>
 </article>
 
