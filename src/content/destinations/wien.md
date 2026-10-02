@@ -33,7 +33,7 @@ Geschichte zum Anfassen, Kaiserschätze und Musik zum Mitmachen: Diese Orte erz�
 
 <article class="item">
   <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ancient_Roman_Ruins_-_Michaelerplatz_archaeological_site_-_Vienna,_Austria.jpg?width=1200" alt="Römische Ausgrabungen am Michaelerplatz in Wien" loading="lazy">
+    <img src="https://4ce4547e.delivery.rocketcdn.me/wp-content/uploads/2025/03/vorschaubild-kombi.webp?width=1200" alt="Römische Ausgrabungen am Michaelerplatz in Wien" loading="lazy">
     <figcaption>Römische Ausgrabungen am Michaelerplatz — nur ein paar Schritte von Time Travel Vienna entfernt <span class="credit">Quelle: Jeff Keyzer, Wikimedia Commons</span></figcaption>
   </figure>
   <div class="item-body">
