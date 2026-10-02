@@ -28,14 +28,18 @@ Schlösser, Kirchen und Museen auf engem Raum, dazwischen Märkte, Parks und ein
 
 Von den Habsburger Residenzen bis zum bunten Hundertwasserhaus: Die Sehenswürdigkeiten liegen größtenteils in der Innenstadt oder sind mit U-Bahn und Straßenbahn schnell erreicht.
 
-### Schlösser: Schönbrunn & Belvedere
+### Schloss Schönbrunn
 
-Schönbrunn war die Sommerresidenz der Habsburger und gehört samt Schlosspark seit 1996 zum UNESCO-Welterbe. Das barocke Belvedere wurde für Prinz Eugen gebaut und zeigt heute unter anderem Klimts „Der Kuss“.
+Schönbrunn war die Sommerresidenz der Habsburger und gehört samt Schlosspark seit 1996 zum UNESCO-Welterbe. Vom Hügel mit der Gloriette hat man den schönsten Blick über Schloss, Gärten und die Stadt dahinter.
 
 <figure>
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien_-_Schloss_Sch%C3%B6nbrunn.JPG?width=1200" alt="Schloss Schönbrunn von der Gloriette aus gesehen" loading="lazy">
   <figcaption>Schloss Schönbrunn, gesehen von der Gloriette <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
 </figure>
+
+### Schloss Belvedere
+
+Das barocke Belvedere ließ sich Prinz Eugen als Sommerpalast mit Garten zwischen Oberem und Unterem Schloss errichten. Im Oberen Belvedere hängt heute unter anderem Gustav Klimts „Der Kuss“.
 
 <figure>
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien_-_Schloss_Belvedere,_oberes_(1).JPG?width=1200" alt="Oberes Belvedere in Wien" loading="lazy">
@@ -127,19 +131,27 @@ Der japanische Garten in Döbling entstand 1992 als Zeichen der Freundschaft mit
 
 Wien isst gerne und gut — vom Schnitzel im Traditionslokal bis zur Spitzenküche, und zwischendurch immer wieder ein Kaffee.
 
-### Top-Restaurants
+### Figlmüller
 
-Für das klassische Wiener Schnitzel führt kaum ein Weg an Figlmüller vorbei, für Tafelspitz aus dem Kupfertopf an Plachutta. Wer sich etwas Besonderes gönnen will, reserviert im Steirereck im Stadtpark, das als eines der besten Restaurants Österreichs gilt.
+Figlmüller gilt seit 1905 als Adresse für das Wiener Schnitzel, das hier über den Tellerrand hinausragt. Ohne Reservierung muss man zu Stoßzeiten mit Wartezeit rechnen.
 
 <figure>
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Figlmueller._World_Famous_Schnitzel%21_Vienna.jpg?width=1200" alt="Wiener Schnitzel bei Figlmüller" loading="lazy">
   <figcaption>Figlmüller — berühmt für Schnitzel, die über den Tellerrand ragen <span class="credit">Quelle: Sarah Ackerman, Wikimedia Commons</span></figcaption>
 </figure>
 
+### Plachutta
+
+Bei Plachutta dreht sich alles um Tafelspitz, der im Kupfertopf samt Suppe an den Tisch kommt. Klassisch isst man zuerst die Suppe und dann das Fleisch mit Apfelkren und Schnittlauchsauce.
+
 <figure>
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tafelspitz_(12972000583).jpg?width=1200" alt="Tafelspitz im Kupfertopf bei Plachutta" loading="lazy">
   <figcaption>Tafelspitz, serviert im Kupfertopf <span class="credit">Quelle: Thomas Quine, Wikimedia Commons</span></figcaption>
 </figure>
+
+### Steirereck
+
+Das Steirereck im Stadtpark gilt als eines der besten Restaurants Österreichs und kocht mit regionalen Zutaten auf Spitzenniveau. Für einen besonderen Abend lohnt sich eine frühe Reservierung.
 
 <figure>
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Restaurante_Steirereck,_Stadtpark,_Viena,_Austria,_2020-01-31,_DD_94.jpg?width=1200" alt="Restaurant Steirereck im Wiener Stadtpark" loading="lazy">
