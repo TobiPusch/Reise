@@ -7,7 +7,7 @@ status: "geplant"
 budget: 3                  # 1 (günstig) bis 5 (teuer)
 order: 7
 subtitle: "Habsburger Prunk, Kaffeehaus-Gemütlichkeit und eine Küche, für die allein sich die Reise lohnt."
-photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Römische Ausgrabungen am Michaelerplatz (Jeff Keyzer), Haus der Musik, Donauturm (Diego Delso), Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
+photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen; Time Travel Vienna: © Time Travel Vienna. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Haus der Musik, Donauturm (Diego Delso), Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
 palette:
   primary: "#A3262A"    # Wiener Rot
   secondary: "#2F4A3A"  # Habsburger Grün
@@ -33,8 +33,8 @@ Geschichte zum Anfassen, Kaiserschätze und Musik zum Mitmachen: Diese Orte erz�
 
 <article class="item">
   <figure>
-    <img src="https://4ce4547e.delivery.rocketcdn.me/wp-content/uploads/2025/03/vorschaubild-kombi.webp?width=1200" alt="Römische Ausgrabungen am Michaelerplatz in Wien" loading="lazy">
-    <figcaption>Römische Ausgrabungen am Michaelerplatz — nur ein paar Schritte von Time Travel Vienna entfernt <span class="credit">Quelle: Jeff Keyzer, Wikimedia Commons</span></figcaption>
+    <img src="https://4ce4547e.delivery.rocketcdn.me/wp-content/uploads/2025/03/vorschaubild-kombi.webp" alt="Eindrücke aus Time Travel Vienna" loading="lazy">
+    <figcaption>Time Travel Vienna — Zeitreise durch die Wiener Geschichte <span class="credit">Quelle: © Time Travel Vienna</span></figcaption>
   </figure>
   <div class="item-body">
     <h3>Time Travel Vienna</h3>
