@@ -7,7 +7,7 @@ status: "geplant"
 budget: 2                  # 1 (günstig) bis 5 (teuer)
 order: 7
 subtitle: "Habsburger Prunk, Kaffeehaus-Gemütlichkeit und eine Küche, für die allein sich die Reise lohnt."
-photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
+photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Habsburgergasse, Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
 palette:
   primary: "#A3262A"    # Wiener Rot
   secondary: "#2F4A3A"  # Habsburger Grün
@@ -149,6 +149,17 @@ Von den Habsburger Residenzen bis zum bunten Hundertwasserhaus: Die Sehenswürdi
   <div class="item-body">
     <h3>Setagayapark</h3>
     <p>Der japanische Garten in Döbling entstand 1992 als Zeichen der Freundschaft mit dem Tokioter Partnerbezirk Setagaya und hat Teich, Steinlaternen und ein Teehaus. Ein ruhiger Ort, der eine kleine Brücke zum Reiseziel Tokio schlägt.</p>
+  </div>
+</article>
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Habsburgergasse_Wien_Nov20142.JPG?width=1200" alt="Blick vom Graben in die Habsburgergasse in Wien" loading="lazy">
+    <figcaption>Die Habsburgergasse — hier liegt der Eingang zu Time Travel Vienna <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Time Travel Vienna</h3>
+    <p>In rund 50 Minuten geht es durch über 2.000 Jahre Stadtgeschichte – von den Römern über die Habsburger bis heute, mit 5D-Kino, Pestgrube und einem originalen Luftschutzkeller. Die Erlebnistour liegt in historischen Kellergewölben in der Habsburgergasse, nur wenige Schritte vom Graben entfernt.</p>
   </div>
 </article>
 
