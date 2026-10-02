@@ -7,7 +7,7 @@ status: "geplant"
 order: 6
 subtitle: "Kühler als du es gewohnt bist, aber genau das macht die Gemütlichkeit drinnen so viel bewusster."
 bestTime: "Mai–August (oder Dezember für Weihnachtsmärkte)"
-photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Nyhavn (Kallerna), Kerze, PH5-Leuchte, Fahrräder in Kopenhagen (Kristoffer Trolle), Cykelslangen, Havnebad Islands Brygge."
+photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Nyhavn (Kallerna), Tivoli Gardens, Torvehallerne, Søerne, Cykelslangen, Havnebad Islands Brygge."
 palette:
   primary: "#C77B4B"    # --rust
   secondary: "#4A6572"  # --dusk
@@ -25,31 +25,31 @@ attractions: []
 
 Hygge ist kein Marketingbegriff, sondern gelebter Alltag: kürzere, kühlere Tage, die durch bewusste Gemütlichkeit ausgeglichen werden — Kerzenlicht, Kaffee im Sitzen statt im Gehen, und eine Stadt, die zum Verweilen gebaut zu sein scheint.
 
-## Hygge-Alltag
+## Hygge erleben
 
-Hygge lässt sich nicht direkt übersetzen — am nächsten kommt „bewusste Gemütlichkeit". Es geht nicht um große Erlebnisse, sondern um kleine, wiederkehrende Momente.
+Hygge lässt sich nicht direkt übersetzen — am nächsten kommt „bewusste Gemütlichkeit". Zwei Orte, an denen man das nicht nur liest, sondern einen Nachmittag lang selbst macht.
 
 <div class="items">
 
 <article class="item">
   <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Candle.jpg?width=1200" alt="Brennende Kerze als Symbol für Hygge" loading="lazy">
-    <figcaption>Kerzenlicht <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli_at_night_-_Koncertsalen.JPG?width=1200" alt="Tivoli Gardens in Kopenhagen bei Nacht" loading="lazy">
+    <figcaption>Tivoli bei Nacht <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
   </figure>
   <div class="item-body">
-    <h3>Kerzenlicht</h3>
-    <p>Eines der einfachsten und beständigsten Symbole für Hygge: eine Decke, eine Kerze, ein Gespräch ohne Zeitdruck. In Kopenhagen ist das kein Lifestyle-Trend, sondern seit Generationen Alltag, um mit kurzen Wintertagen umzugehen.</p>
+    <h3>Tivoli Gardens</h3>
+    <p>Der 1843 eröffnete Vergnügungspark mitten in der Stadt inspirierte angeblich sogar Walt Disney. Abends, wenn Tausende Lichter zwischen den Fahrgeschäften angehen, ist er der konzentrierteste Hygge-Moment, den Kopenhagen zu bieten hat.</p>
   </div>
 </article>
 
 <article class="item">
   <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Louis_Poulsen_PH5_Poul_Hennigsen.jpg?width=1200" alt="PH5-Leuchte von Poul Henningsen" loading="lazy">
-    <figcaption>Die PH5-Leuchte von Poul Henningsen <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Copenhagen_Torvehallerne_(30267894558).jpg?width=1200" alt="Marktstände in den Torvehallerne in Kopenhagen" loading="lazy">
+    <figcaption>Marktstände in den Torvehallerne <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
   </figure>
   <div class="item-body">
-    <h3>Dänisches Design</h3>
-    <p>Die blendfreie PH5-Leuchte von 1958 hängt bis heute über unzähligen Esstischen der Stadt. Warmes, indirektes Licht ist fester Bestandteil der dänischen Wohnkultur — und damit selbst Teil des Hygge-Gefühls.</p>
+    <h3>Torvehallerne</h3>
+    <p>In den zwei Markthallen am Nørreport gibt es Smørrebrød, Kaffee und dänisches Gebäck zum Stehen oder Sitzen an langen Tischen. Genau der Ort für Kaffee im Sitzen statt im Gehen, mitten im Alltag der Stadt.</p>
   </div>
 </article>
 
@@ -63,12 +63,12 @@ Hygge lässt sich nicht direkt übersetzen — am nächsten kommt „bewusste Ge
 
 <article class="item">
   <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bicycles_in_Copenhagen_(50980998598).jpg?width=1200" alt="Fahrräder in Kopenhagen" loading="lazy">
-    <figcaption>Fahrräder im Stadtbild <span class="credit">Quelle: Kristoffer Trolle, Wikimedia Commons</span></figcaption>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/S%C3%B8erne_5.jpg?width=1200" alt="Die Seen (Søerne) in Kopenhagen" loading="lazy">
+    <figcaption>Die Søerne, Kopenhagens innerstädtische Seen <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
   </figure>
   <div class="item-body">
-    <h3>Fahrradalltag</h3>
-    <p>Breite, sichere Radwege prägen das Stadtbild genauso wie die Architektur. Ein Fahrrad zu leihen ist hier keine Touristenaktivität, sondern der ehrlichste Weg, den Alltag der Stadt mitzuerleben.</p>
+    <h3>Søerne</h3>
+    <p>Die fünf Seen trennen die Innenstadt von Vierteln wie Nørrebro und Frederiksberg, ein durchgehender Uferweg führt einmal komplett herum. Eine knapp sechs Kilometer lange Radrunde, die sich problemlos mit einem Leihrad abends erledigen lässt.</p>
   </div>
 </article>
 
