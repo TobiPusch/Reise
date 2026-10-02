@@ -43,6 +43,7 @@ export const defaultTheme: CityTheme = {
 };
 
 export const themes: Record<string, CityTheme> = {
+
   tokio: {
     font: "'Zen Old Mincho', serif",
     title: { weight: 500, size: [52, 68], lineHeight: 0.98 },
@@ -98,6 +99,12 @@ export const themes: Record<string, CityTheme> = {
     hero: { opacity: 0.7, minHeight: [72, 78], background: "secondary", shade: "text", shadeAlpha: 92 },
     surface: "#EADFC9",
     ruleAlpha: 15,
+    navOverlay: true,
+  },
+  // Neu angelegt (nicht aus dem Original): Standard-Typografie, Navigation über dem Hero.
+  wien: {
+    ...defaultTheme,
+    surface: "#ECE3CF",
     navOverlay: true,
   },
 };

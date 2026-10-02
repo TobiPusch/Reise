@@ -295,6 +295,15 @@ const footerText =
     color: var(--chapter-num);
   }
 
+  /* Unterabschnitte innerhalb eines Kapitels (### im Markdown) */
+  .city .prose h3 {
+    font-family: var(--font-display);
+    font-weight: var(--chapter-title-weight);
+    font-size: calc(var(--chapter-title-size) * 0.75);
+    line-height: 1.25;
+    margin: 36px 0 8px;
+  }
+
   .city figure {
     margin: 22px 0;
   }
