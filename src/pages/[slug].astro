@@ -331,6 +331,13 @@ const footerText =
     background: color-mix(in srgb, var(--text) 12%, transparent);
   }
 
+  /* Karten/Pläne vollständig zeigen statt beschneiden */
+  .city .item-map figure img {
+    object-fit: contain;
+    background: #fff;
+    padding: 8px;
+  }
+
   .city .item figcaption {
     margin: 0;
     padding: 8px 16px 0;

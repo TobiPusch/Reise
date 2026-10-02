@@ -6,7 +6,7 @@ teaser: "Kaiserstadt zwischen Schlössern, Kaffeehäusern und Schnitzel — mit 
 status: "geplant"
 order: 7
 subtitle: "Habsburger Prunk, Kaffeehaus-Gemütlichkeit und eine Küche, für die allein sich die Reise lohnt."
-photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Straßenbahn der Wiener Linien."
+photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
 palette:
   primary: "#A3262A"    # Wiener Rot
   secondary: "#2F4A3A"  # Habsburger Grün
@@ -209,9 +209,32 @@ Wien isst gerne und gut — vom Schnitzel im Traditionslokal bis zur Spitzenküc
 
 Wien hat eines der dichtesten Öffi-Netze Europas: U-Bahn, Straßenbahn und Busse fahren eng getaktet, nachts übernehmen die Nightlines. Mit der App WienMobil der Wiener Linien kauft man Tickets direkt am Handy und plant Routen, die auch Leihräder und andere Sharing-Angebote einbeziehen.
 
-<figure>
-  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien-wiener-linien-sl-71-945235.jpg?width=1200" alt="Straßenbahn der Wiener Linien" loading="lazy">
-  <figcaption>Straßenbahn der Wiener Linien <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
-</figure>
+<div class="items">
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien-wiener-linien-sl-71-945235.jpg?width=1200" alt="Straßenbahn der Wiener Linien" loading="lazy">
+    <figcaption>Straßenbahn der Wiener Linien <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Straßenbahn</h3>
+    <p>Die Bim ist das Rückgrat des Wiener Nahverkehrs und fährt auch rund um die Ringstraße. Eine Runde mit den Linien 1 und 2 ist nebenbei eine günstige Sightseeing-Tour vorbei an Oper, Parlament und Rathaus.</p>
+  </div>
+</article>
+
+<article class="item item-map">
+  <figure>
+    <a href="https://commons.wikimedia.org/wiki/File:U-Bahn_Netz_Wien.svg" target="_blank" rel="noopener">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/U-Bahn_Netz_Wien.svg?width=1200" alt="Netzplan der Wiener U-Bahn" loading="lazy">
+    </a>
+    <figcaption>Netzplan der Wiener U-Bahn — antippen für die große Ansicht <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>U-Bahn-Netzplan</h3>
+    <p>Die U-Bahn-Linien sind nach Farben und Nummern sortiert und verbinden alle wichtigen Sehenswürdigkeiten mit der Innenstadt. Am Stephansplatz, Karlsplatz und Westbahnhof kreuzen sich die wichtigsten Linien.</p>
+  </div>
+</article>
+
+</div>
 
 <div class="note"><strong>Für dich interessant:</strong> Für einen Städtetrip lohnen sich die 24-, 48- oder 72-Stunden-Tickets — damit fährt man in der Kernzone Wien beliebig oft mit allen Öffis.</div>
