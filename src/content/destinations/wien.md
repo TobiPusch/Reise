@@ -225,10 +225,8 @@ Wien hat eines der dichtesten Öffi-Netze Europas: U-Bahn, Straßenbahn und Buss
 
 <article class="item item-map">
   <figure>
-    <a href="https://commons.wikimedia.org/wiki/File:U-Bahn_Netz_Wien.svg" target="_blank" rel="noopener">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/U-Bahn_Netz_Wien.svg?width=1200" alt="Netzplan der Wiener U-Bahn" loading="lazy">
-    </a>
-    <figcaption>Netzplan der Wiener U-Bahn — antippen für die große Ansicht <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/U-Bahn_Netz_Wien.svg?width=1200" alt="Netzplan der Wiener U-Bahn" loading="lazy">
+    <figcaption>Netzplan der Wiener U-Bahn — antippen zum Vergrößern <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
   </figure>
   <div class="item-body">
     <h3>U-Bahn-Netzplan</h3>
