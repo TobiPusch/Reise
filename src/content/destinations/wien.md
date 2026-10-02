@@ -7,7 +7,7 @@ status: "geplant"
 budget: 2                  # 1 (günstig) bis 5 (teuer)
 order: 7
 subtitle: "Habsburger Prunk, Kaffeehaus-Gemütlichkeit und eine Küche, für die allein sich die Reise lohnt."
-photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Habsburgergasse, Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
+photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Römische Ausgrabungen am Michaelerplatz (Jeff Keyzer), Haus der Musik, Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
 palette:
   primary: "#A3262A"    # Wiener Rot
   secondary: "#2F4A3A"  # Habsburger Grün
@@ -25,9 +25,72 @@ attractions: []
 
 Schlösser, Kirchen und Museen auf engem Raum, dazwischen Märkte, Parks und eine Küche, die man nicht nur einmal probieren will — und alles ist bequem mit den Öffis erreichbar.
 
-## Attraktionen
+## Erlebnisse & Museen
 
-Von den Habsburger Residenzen bis zum bunten Hundertwasserhaus: Die Sehenswürdigkeiten liegen größtenteils in der Innenstadt oder sind mit U-Bahn und Straßenbahn schnell erreicht.
+Geschichte zum Anfassen, Kaiserschätze und Musik zum Mitmachen: Diese Orte erzählen Wien nicht nur, sie lassen es erleben.
+
+<div class="items">
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ancient_Roman_Ruins_-_Michaelerplatz_archaeological_site_-_Vienna,_Austria.jpg?width=1200" alt="Römische Ausgrabungen am Michaelerplatz in Wien" loading="lazy">
+    <figcaption>Römische Ausgrabungen am Michaelerplatz — nur ein paar Schritte von Time Travel Vienna entfernt <span class="credit">Quelle: Jeff Keyzer, Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Time Travel Vienna</h3>
+    <p>In rund 50 Minuten geht es durch über 2.000 Jahre Stadtgeschichte – von den Römern über die Habsburger bis heute, mit 5D-Kino, Pestgrube und einem originalen Luftschutzkeller. Die Erlebnistour liegt in historischen Kellergewölben in der Habsburgergasse, nur wenige Schritte vom Graben entfernt.</p>
+  </div>
+</article>
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Haus_der_Musik_(11).jpg?width=1200" alt="Haus der Musik in Wien" loading="lazy">
+    <figcaption>Im Haus der Musik <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Haus der Musik</h3>
+    <p>Im Klangmuseum wird Hören zum Erlebnis: An interaktiven Stationen kann man mit Tönen experimentieren und am virtuellen Dirigentenpult selbst die Wiener Philharmoniker leiten. Dazu gibt es Räume zu Komponisten wie Mozart, Beethoven und Strauss, die in Wien gelebt und gearbeitet haben.</p>
+  </div>
+</article>
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Reichskrone_1.JPG?width=1200" alt="Reichskrone des Heiligen Römischen Reiches in der Wiener Schatzkammer" loading="lazy">
+    <figcaption>Die Reichskrone des Heiligen Römischen Reiches <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Kaiserliche Schatzkammer</h3>
+    <p>In der Hofburg liegen die Kronjuwelen der Habsburger, darunter die über tausend Jahre alte Reichskrone des Heiligen Römischen Reiches. Dazu kommen Krönungsmäntel, Zepter und Reliquien — Weltgeschichte in Vitrinen.</p>
+  </div>
+</article>
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien_-_Albertina_(b).JPG?width=1200" alt="Die Albertina in Wien" loading="lazy">
+    <figcaption>Die Albertina — Palais und eine der größten grafischen Sammlungen der Welt <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Albertina</h3>
+    <p>Die Albertina besitzt eine der bedeutendsten grafischen Sammlungen der Welt, darunter Dürers berühmten „Feldhasen“. Neben wechselnden Ausstellungen lassen sich auch die prunkvollen habsburgischen Wohnräume des Palais besichtigen.</p>
+  </div>
+</article>
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien_-_Kaisergruft,_Sarkophag_Kaiser_Karl_VI._(b).JPG?width=1200" alt="Sarkophag Kaiser Karls VI. in der Kaisergruft" loading="lazy">
+    <figcaption>Der Prunksarkophag Kaiser Karls VI. in der Kaisergruft <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Kaisergruft</h3>
+    <p>Unter der Kapuzinerkirche liegt seit dem 17. Jahrhundert die Grablege der Habsburger, darunter Maria Theresia, Franz Joseph und Kaiserin Elisabeth. Die kunstvoll verzierten Sarkophage machen den Abstieg zu einer stillen Zeitreise.</p>
+  </div>
+</article>
+
+</div>
+
+## Architektur
+
+Von Barock-Schlössern über die Gotik des Stephansdoms bis zu Hundertwassers bunten Fassaden — Wien ist ein Architekturbuch zum Durchlaufen.
 
 <div class="items">
 
@@ -66,67 +129,12 @@ Von den Habsburger Residenzen bis zum bunten Hundertwasserhaus: Die Sehenswürdi
 
 <article class="item">
   <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Reichskrone_1.JPG?width=1200" alt="Reichskrone des Heiligen Römischen Reiches in der Wiener Schatzkammer" loading="lazy">
-    <figcaption>Die Reichskrone des Heiligen Römischen Reiches <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
-  </figure>
-  <div class="item-body">
-    <h3>Kaiserliche Schatzkammer</h3>
-    <p>In der Hofburg liegen die Kronjuwelen der Habsburger, darunter die über tausend Jahre alte Reichskrone des Heiligen Römischen Reiches. Dazu kommen Krönungsmäntel, Zepter und Reliquien — Weltgeschichte in Vitrinen.</p>
-  </div>
-</article>
-
-<article class="item">
-  <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien_-_Albertina_(b).JPG?width=1200" alt="Die Albertina in Wien" loading="lazy">
-    <figcaption>Die Albertina — Palais und eine der größten grafischen Sammlungen der Welt <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
-  </figure>
-  <div class="item-body">
-    <h3>Albertina</h3>
-    <p>Die Albertina besitzt eine der bedeutendsten grafischen Sammlungen der Welt, darunter Dürers berühmten „Feldhasen“. Neben wechselnden Ausstellungen lassen sich auch die prunkvollen habsburgischen Wohnräume des Palais besichtigen.</p>
-  </div>
-</article>
-
-<article class="item">
-  <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien,_Naschmarkt_--_2018_--_3109.jpg?width=1200" alt="Marktstand am Naschmarkt in Wien" loading="lazy">
-    <figcaption>Marktstand am Naschmarkt <span class="credit">Quelle: Dietmar Rabich, Wikimedia Commons</span></figcaption>
-  </figure>
-  <div class="item-body">
-    <h3>Naschmarkt</h3>
-    <p>Wiens bekanntester Markt zieht sich über rund anderthalb Kilometer zwischen den Wienzeilen entlang. Zwischen Gewürzen, Oliven, Käse und kleinen Lokalen kann man sich hier einmal quer durch die Küchen der Welt probieren.</p>
-  </div>
-</article>
-
-<article class="item">
-  <figure>
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Exterior,_Karlskirche,_Vienna.jpg?width=1200" alt="Außenansicht der Karlskirche in Wien" loading="lazy">
     <figcaption>Die Karlskirche am Karlsplatz <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
   </figure>
   <div class="item-body">
     <h3>Karlskirche</h3>
     <p>Kaiser Karl VI. ließ die Barockkirche nach der Pestepidemie von 1713 errichten, entworfen von Johann Bernhard Fischer von Erlach. Die grüne Kuppel und die zwei Triumphsäulen spiegeln sich im Wasserbecken auf dem Karlsplatz.</p>
-  </div>
-</article>
-
-<article class="item">
-  <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien_-_Kaisergruft,_Sarkophag_Kaiser_Karl_VI._(b).JPG?width=1200" alt="Sarkophag Kaiser Karls VI. in der Kaisergruft" loading="lazy">
-    <figcaption>Der Prunksarkophag Kaiser Karls VI. in der Kaisergruft <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
-  </figure>
-  <div class="item-body">
-    <h3>Kaisergruft</h3>
-    <p>Unter der Kapuzinerkirche liegt seit dem 17. Jahrhundert die Grablege der Habsburger, darunter Maria Theresia, Franz Joseph und Kaiserin Elisabeth. Die kunstvoll verzierten Sarkophage machen den Abstieg zu einer stillen Zeitreise.</p>
-  </div>
-</article>
-
-<article class="item">
-  <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Johann_Strauss_Denkmal_Wien.JPG?width=1200" alt="Goldenes Johann-Strauss-Denkmal im Wiener Stadtpark" loading="lazy">
-    <figcaption>Das vergoldete Johann-Strauss-Denkmal im Stadtpark <span class="credit">Quelle: C.Stadler/Bwag, Wikimedia Commons</span></figcaption>
-  </figure>
-  <div class="item-body">
-    <h3>Stadtpark</h3>
-    <p>Der 1862 eröffnete Stadtpark an der Ringstraße ist eine grüne Pause mitten in der Stadt. Sein bekanntestes Fotomotiv ist das goldene Denkmal des Walzerkönigs Johann Strauss.</p>
   </div>
 </article>
 
@@ -141,6 +149,25 @@ Von den Habsburger Residenzen bis zum bunten Hundertwasserhaus: Die Sehenswürdi
   </div>
 </article>
 
+</div>
+
+## Grün & Wasser
+
+Zwischen den Prachtbauten liegen Parks und Gärten, in denen die Stadt langsamer wird.
+
+<div class="items">
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Johann_Strauss_Denkmal_Wien.JPG?width=1200" alt="Goldenes Johann-Strauss-Denkmal im Wiener Stadtpark" loading="lazy">
+    <figcaption>Das vergoldete Johann-Strauss-Denkmal im Stadtpark <span class="credit">Quelle: C.Stadler/Bwag, Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Stadtpark</h3>
+    <p>Der 1862 eröffnete Stadtpark an der Ringstraße ist eine grüne Pause mitten in der Stadt. Sein bekanntestes Fotomotiv ist das goldene Denkmal des Walzerkönigs Johann Strauss.</p>
+  </div>
+</article>
+
 <article class="item">
   <figure>
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Setagayapark,_Wien_-_September_2017_-_02.jpg?width=1200" alt="Japanischer Garten im Setagayapark in Wien-Döbling" loading="lazy">
@@ -152,24 +179,24 @@ Von den Habsburger Residenzen bis zum bunten Hundertwasserhaus: Die Sehenswürdi
   </div>
 </article>
 
-<article class="item">
-  <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Habsburgergasse_Wien_Nov20142.JPG?width=1200" alt="Blick vom Graben in die Habsburgergasse in Wien" loading="lazy">
-    <figcaption>Die Habsburgergasse — hier liegt der Eingang zu Time Travel Vienna <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
-  </figure>
-  <div class="item-body">
-    <h3>Time Travel Vienna</h3>
-    <p>In rund 50 Minuten geht es durch über 2.000 Jahre Stadtgeschichte – von den Römern über die Habsburger bis heute, mit 5D-Kino, Pestgrube und einem originalen Luftschutzkeller. Die Erlebnistour liegt in historischen Kellergewölben in der Habsburgergasse, nur wenige Schritte vom Graben entfernt.</p>
-  </div>
-</article>
-
 </div>
 
-## Essen
+## Essen & Viertel
 
-Wien isst gerne und gut — vom Schnitzel im Traditionslokal bis zur Spitzenküche, und zwischendurch immer wieder ein Kaffee.
+Wien isst gerne und gut — vom Marktstand über das Schnitzel im Traditionslokal bis zur Spitzenküche, und zwischendurch immer wieder ein Kaffee.
 
 <div class="items">
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wien,_Naschmarkt_--_2018_--_3109.jpg?width=1200" alt="Marktstand am Naschmarkt in Wien" loading="lazy">
+    <figcaption>Marktstand am Naschmarkt <span class="credit">Quelle: Dietmar Rabich, Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Naschmarkt</h3>
+    <p>Wiens bekanntester Markt zieht sich über rund anderthalb Kilometer zwischen den Wienzeilen entlang. Zwischen Gewürzen, Oliven, Käse und kleinen Lokalen kann man sich hier einmal quer durch die Küchen der Welt probieren.</p>
+  </div>
+</article>
 
 <article class="item">
   <figure>
