@@ -44,7 +44,7 @@ Die Übersicht lässt sich nach **Kontinent**, **Status** und **Budget** filtern
 2. Frontmatter ausfüllen:
    - **Pflicht:** `title`, `country`, `continent` (`Europa` | `Asien` | `Afrika` | `Nordamerika` | `Südamerika` | `Ozeanien` | `Antarktis`), `teaser`, `palette` (fünf Hex-Farben), `heroImage` (`src`, `alt`, optional `credit`)
    - **Optional:** `status` (`"geplant"` | `"besucht"`, Standard `"geplant"`), `visitedAt` (Datum), `budget` (1 = günstig bis 5 = teuer, wird als 💰-Skala angezeigt und ist filterbar), `attractions`, `order` (Position auf der Übersicht), `subtitle` (Hero-Untertitel), `bestTime` (beste Reisezeit), `photoCredits` (Bildnachweis im Footer)
-3. Text als Markdown schreiben: Einleitung oben, jedes Kapitel als `## Überschrift`. Kapitel werden automatisch nummeriert. Bilder, Zitate (`>`) und Notizen (`<div class="note">`) wie in der Vorlage.
+3. Text als Markdown schreiben: Einleitung oben, jedes Kapitel als `## Überschrift`. Kapitel werden automatisch nummeriert. Bilder, Zitate (`>`) und Notizen (`<div class="note">`) wie in der Vorlage. Unterpunkte (z.B. einzelne Sehenswürdigkeiten oder Restaurants) werden als Karten mit Bild, Titel und kurzem Text dargestellt: `<div class="items">` mit je einem `<article class="item">` – siehe Vorlage und `wien.md`.
 4. `npm run dev` – das Ziel erscheint automatisch auf der Übersicht (inkl. Filter) und als Detailseite.
 
 Ohne Eintrag in `src/lib/themes.ts` bekommt ein neues Ziel das Standard-Design (Cormorant Garamond). Wer Schrift oder Hero-Details anpassen will, ergänzt dort einen Eintrag mit dem Slug.

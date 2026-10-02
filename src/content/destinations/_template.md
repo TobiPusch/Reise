@@ -54,3 +54,19 @@ Text des Kapitels.
 ## Zweites Kapitel
 
 Text des Kapitels.
+
+<!-- Optional: Unterpunkte als Karten (Bild, Titel, 1–2 Sätze), z.B. für Attraktionen oder Restaurants -->
+<div class="items">
+
+<article class="item">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DATEINAME.jpg?width=1200" alt="Bildbeschreibung" loading="lazy">
+    <figcaption>Bildunterschrift <span class="credit">Quelle: Wikimedia Commons</span></figcaption>
+  </figure>
+  <div class="item-body">
+    <h3>Name des Unterpunkts</h3>
+    <p>Ein bis zwei Sätze zum Unterpunkt.</p>
+  </div>
+</article>
+
+</div>

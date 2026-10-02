@@ -304,6 +304,52 @@ const footerText =
     margin: 36px 0 8px;
   }
 
+  /* Unterpunkte als Karten: Bild, Titel, kurzer Text (<div class="items"> im Markdown) */
+  .city .items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .city .item {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .city .item figure {
+    margin: 0;
+  }
+
+  .city .item figure img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 0;
+    background: color-mix(in srgb, var(--text) 12%, transparent);
+  }
+
+  .city .item figcaption {
+    margin: 0;
+    padding: 8px 16px 0;
+  }
+
+  .city .item-body {
+    padding: 4px 16px 18px;
+  }
+
+  .city .prose .item h3 {
+    margin: 10px 0 6px;
+  }
+
+  .city .prose .item p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
   .city figure {
     margin: 22px 0;
   }
@@ -431,6 +477,12 @@ const footerText =
     font-size: 12px;
     opacity: 0.5;
     line-height: 1.7;
+  }
+
+  @media (min-width: 600px) {
+    .city .items {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (min-width: 560px) {
