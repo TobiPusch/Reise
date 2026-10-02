@@ -4,6 +4,7 @@ country: "Österreich"
 continent: "Europa"
 teaser: "Kaiserstadt zwischen Schlössern, Kaffeehäusern und Schnitzel — mit einem japanischen Garten als Brücke nach Tokio."
 status: "geplant"
+budget: 2                  # 1 (günstig) bis 5 (teuer)
 order: 7
 subtitle: "Habsburger Prunk, Kaffeehaus-Gemütlichkeit und eine Küche, für die allein sich die Reise lohnt."
 photoCredits: "Bildnachweis: Fotos von Wikimedia Commons, verschiedene CC-Lizenzen. Quellen: Schloss Schönbrunn, Oberes Belvedere (C.Stadler/Bwag), Stephansdom, Reichskrone, Albertina, Naschmarkt (Dietmar Rabich), Karlskirche, Kaisergruft, Johann-Strauss-Denkmal (C.Stadler/Bwag), Hundertwasserhaus, Setagayapark, Figlmüller (Sarah Ackerman), Tafelspitz (Thomas Quine), Steirereck (Diego Delso), Café Central (Dietmar Rabich), Straßenbahn der Wiener Linien, U-Bahn-Netzplan."
